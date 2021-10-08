@@ -4,7 +4,7 @@
 ## Installation and usage
 The installation itself is done by the pip package manager:
 
-`pip install seawave-spectrum`.
+`pip install seawave-retracking`.
 
 After that, copy the file `config.toml` from the repository into the current working directory and the program is ready to use. 
 Basic usage can be found in the examples folder.

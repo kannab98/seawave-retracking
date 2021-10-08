@@ -48,12 +48,11 @@ def to_xlsx(pulses):
     df0 = pd.DataFrame(columns=columns)
     df = pd.DataFrame(columns=["SWH", "H", "VarSlopes"], index=files)
     for i, f in enumerate(files):
-        # t = pulses[i].time
+        t = pulses[i].time
         ptype = pulses[i].type
-        # df0[f, "t"] = t
-        # df0[f, "P"] = pulses[i].power
-        # if (np.all(pulses[i].popt != None)):
-        #     df0[f, "Pest"] = pulses[i].pulse(t, *pulses[i].popt)
+        df0[f, "t"] = pd.Series(t)
+        df0[f, "P"] = pd.Series(pulses[i].power)
+        df0[f, "Pest"] = pd.Series(pulses[i].pulse(t, *pulses[i].popt))
 
         df.iloc[i][0] = pulses[i].swh
         df.iloc[i][1] = pulses[i].height
