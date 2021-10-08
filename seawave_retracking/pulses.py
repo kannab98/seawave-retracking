@@ -34,11 +34,19 @@ def get_files(file, **kwargs):
     
     for file in _files_:
         logger.info("Found file: %s" % file)
+    
+    if not _files_:
+        logger.error("No files found")
 
     return _files_
 
 def to_xlsx(pulses):
     files = []
+
+    if not pulses:
+        logger.error("No processed pulses")
+        return 
+
     for i in range(len(pulses)):
         files.append(pulses[i].src)
     
@@ -185,7 +193,6 @@ class karaev(pulse):
             slopes_coeff = self.popt[1]
             delta = self.delta
             invvarslopes = 2*(slopes_coeff*H**2 - 5.52/delta**2)
-            print(1/invvarslopes)
             return 1/invvarslopes
         else:
             return None

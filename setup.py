@@ -10,7 +10,7 @@ package_data = {
 }
 setuptools.setup(
     name="seawave_retracking",
-    version = "v1.0.0",
+    version = "v1.0.2a",
     author="Kirill Ponur",
     author_email="ponur@ipfran.ru",
     description="",
@@ -24,5 +24,5 @@ setuptools.setup(
         "Operating System :: OS Independent",
     ],
     python_requires='>=3.6',
-    install_requires=['numpy', 'scipy', 'toml', 'pandas'],
+    install_requires=['numpy', 'scipy', 'toml', 'pandas', 'openpyxl'],
 )
